@@ -1,0 +1,19 @@
+{{#each poems}}
+
+<div class="container"><div class="jumbotron">
+
+<div class="container pr-5">
+<h2 class="text-right display-7"><em> {{this.epigraph}} </em>
+
+</h2>
+</div>
+
+{{#each this.lines}}
+
+<h1 class="text-center display-6">{{{this}}}</h1>
+
+{{/each}}
+
+</div></div>
+
+{{/each}}
