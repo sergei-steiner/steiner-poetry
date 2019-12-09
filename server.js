@@ -605,7 +605,7 @@ app.get('/1-1', (req, res) => {
 
 app.get('/', (req, res) => {
      res.render('index', { 
-         title: "Главная",
+         title: "Разностишия",
          pages : [
              
              {name : "26", title : "Танкетки"},
