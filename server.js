@@ -610,6 +610,7 @@ app.get('/', (req, res) => {
          pages : [
              
              {name : "26", title : "Танкетки"},
+             {name : "zh-p", title : "Журнал Прыщ"},
              {name : "42", title : "Сорокадвушки"},
              {name : "redblack", title : "Редблеки"},
              {name : "merch", title : "Мерчи"},
