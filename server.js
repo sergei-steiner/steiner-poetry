@@ -344,6 +344,18 @@ app.get('/zh-p', (req, res) => {
      ]});
 });
 
+app.get('/monostichs', (req, res) => {
+     res.redirect('https://twitter.com/rumonostichs')
+});
+
+app.get('/instapoetry', (req, res) => {
+     res.redirect('https://www.instagram.com/russian.instapoetry')
+});
+
+app.get('/hello_world_poetry', (req, res) => {
+     res.redirect('https://t.me/hello_world_poetry')
+});
+
 app.get('/mono', (req, res) => {
      res.render('poems', { 
      title: "Моностихи",
@@ -370,15 +382,7 @@ app.get('/mono', (req, res) => {
      {lines : ["к тому же Пушкин c Бродским близнецы"]},
      {lines : ["русская (нобелевская) речь"]},
      {lines : ["не ВОР а ВОСР"]},
-     {lines : ["акмеисты: три поэта и три поэта-акмеиста"]},
-     
-
-     
-     
-     
-     
-
-     
+     {lines : ["акмеисты: три поэта и три поэта-акмеиста"]},    
      ]});
 });
 
@@ -495,6 +499,16 @@ app.get('/26', (req, res) => {
      res.render('poems', { 
      title: "Мои танкетки",
      poems : [
+     {lines : ["<font color='red'>декабрь", "2019 </font>"]},
+     {lines : ["подарки", "под ёлку", "<br>", "поделки", "под арку"]},
+     {lines : ["первомай", "черномор", "<br>", "и опять", "первомай"], epigraph : "из Некрасова"},
+     {lines : ["так учил", "учитель", "<br>", "главное", "слышать звон"]},
+     {lines : ["пексесо", "из носков"]},
+     {lines : ["Дали", "Окуджавы", "<br>", "грузинских", "палестин"]},
+     {lines : ["гендер", "гендер гендер", "<br>", "что-то", "еврейское"]},
+     {lines : ["запах", "мандаринов"]},
+     {lines : ["упростил", "Вас до вас"]},
+         
      {lines : ["<font color='red'>ноябрь", "2019 </font>"]},
      {lines : ["отродясь", "двадцать пять"]},
      {lines : ["жираф", "жирафихи", "<br>", "длинно", "шееее"]},
@@ -611,13 +625,14 @@ app.get('/', (req, res) => {
              
              {name : "26", title : "Танкетки"},
              {name : "zh-p", title : "Журнал Прыщ"},
+             {name : "hello_world_poetry", title : "Стихи погромиста"},
+             {name : "instapoetry", title : "Инстапоэзия"},
+             {name : "monostichs", title : "Моностихи"},
              {name : "landscapes", title : "Пейзажная лирика"},
              {name : "42", title : "Сорокадвушки"},
              {name : "redblack", title : "Редблеки"},
              {name : "merch", title : "Мерчи"},
              {name : "stereo", title : "Стереостихи"},
-             {name : "mono", title : "Моностихи"},
-             {name : "programming", title : "Стихи погромиста"},
              {name : "porozhki", title : "Порожки"},
              {name : "forks", title : "Форки"},
              {name : "auto_26", title : "Автотанкетки"},
