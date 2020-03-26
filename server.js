@@ -6,13 +6,16 @@ app.engine('handlebars', expbs( { defaultLayout : 'main'}));
 app.set('view engine', 'handlebars');
 
 
-app.get('/noname', (req, res) => {
+app.get('/noumenon', (req, res) => {
      res.render('poems', { 
      title: "Вещь в себе",
      poems : [
      {lines : ["пенальти в тишине"], epigraph: "чужое"},         
      {lines : ["индийка в Индигирке"]},
-     {lines : ["Гарвард в Кембридже"]}    
+     {lines : ["Гарвард в Кембридже"]},
+     {lines : ["кенгуру в Шенбрунне"]},
+     {lines : ["одиночество в общежитии"]},
+     {lines : ["саверма в Самаре"]}
      ]});
 });
 
@@ -677,7 +680,7 @@ app.get('/', (req, res) => {
              //{name : "trip", title : "Поездки"},
              //{name : "train", title : "Поезда"},
              //{name : "35", title : "Троепятки"},
-             //{name : "plagiarism", title : "Плагиат"},
+             {name : "plagiarism", title : "Плагиат"},
              //{name : "12", title : "Слова в две строки"},
              //{name : "mindlessness", title : "Задумки"},
              //{name : "samara", title : "Самара"},
@@ -690,12 +693,12 @@ app.get('/', (req, res) => {
              //{name : "haiku", title : "Свободные хокку"},
              //{name : "8", title : "Восьмое чудо света"},
              //{name : "numbers", title : "Цифры"},
-             //{name : "gariks", title : "Гарики"},
+             {name : "gariks", title : "Гарики"},
              //{name : "transform", title : "Устройства по превращению"},
              //{name : "parentheses", title : "Скобки"},
              //{name : "doubles", title : "Двойники"},
              //{name : "words", title : "Неологизмы"},
-             //{name : "noname", title : "Вещь в себе"}
+             {name : "noumenon ", title : "Вещь в себе"}
          ]          
      });
 });
