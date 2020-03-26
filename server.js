@@ -697,7 +697,7 @@ app.get('/', (req, res) => {
              //{name : "transform", title : "Устройства по превращению"},
              //{name : "parentheses", title : "Скобки"},
              //{name : "doubles", title : "Двойники"},
-             //{name : "words", title : "Неологизмы"},
+             {name : "words", title : "Неологизмы"},
              {name : "noumenon ", title : "Вещь в себе"}
          ]          
      });
