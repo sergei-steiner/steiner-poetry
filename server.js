@@ -688,7 +688,7 @@ app.get('/', (req, res) => {
              //{name : "2", title : "Два слова"},
              //{name : "ostrich", title : "Страуса"},
              //{name : "1-1", title : "В две строки"},
-             //{name : "side", title : "Взгляд сбоку"},
+             {name : "side", title : "Взгляд сбоку"},
              {name : "575", title : "Строгие хокку"},
              {name : "haiku", title : "Свободные хокку"},
              //{name : "8", title : "Восьмое чудо света"},
