@@ -671,7 +671,7 @@ app.get('/', (req, res) => {
              //{name : "stereo", title : "Стереостихи"},
              //{name : "porozhki", title : "Порожки"},
              //{name : "forks", title : "Форки"},
-             //{name : "auto_26", title : "Автотанкетки"},
+             {name : "auto_26", title : "Автотанкетки"},
              //{name : "squeeze", title : "Выжимки"},
              //{name : "piramids", title : "Пирамидки"},
              //{name : "equations", title : "Уравнения"},
@@ -689,8 +689,8 @@ app.get('/', (req, res) => {
              //{name : "ostrich", title : "Страуса"},
              //{name : "1-1", title : "В две строки"},
              //{name : "side", title : "Взгляд сбоку"},
-             //{name : "575", title : "Строгие хокку"},
-             //{name : "haiku", title : "Свободные хокку"},
+             {name : "575", title : "Строгие хокку"},
+             {name : "haiku", title : "Свободные хокку"},
              //{name : "8", title : "Восьмое чудо света"},
              //{name : "numbers", title : "Цифры"},
              {name : "gariks", title : "Гарики"},
@@ -702,6 +702,7 @@ app.get('/', (req, res) => {
          ]          
      });
 });
+
 
 app.listen(80, () => {
     console.log('server is starting at port... ', 80);
