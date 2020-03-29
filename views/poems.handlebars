@@ -1,6 +1,9 @@
+<style type="text/css"> .txtUpsideDown  { 	filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */ 	ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */ 	-moz-transform: rotate(-180deg);  /* FF3.5+ */ 	-o-transform: rotate(-180deg);  /* Opera 10.5 */ 	-webkit-transform: rotate(-180deg);  /* Safari 3.1+, Chrome */ 	position: absolute;  } </style>
+
 {{#each poems}}
 
-<div class="container"><div class="jumbotron">
+<div class="container">
+<div class="jumbotron">
 
 <div class="container pr-5">
 <h2 class="text-right display-7"><em> {{this.epigraph}} </em>
@@ -14,6 +17,21 @@
 
 {{/each}}
 
-</div></div>
+<div>
+<div class="container">
+<div class="row">
+<div class="col">
+</div>
+<div class="col">
+<h2 class="display-7 txtUpsideDown"><em> {{this.reverse}} </em>
+</h2>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
 
 {{/each}}

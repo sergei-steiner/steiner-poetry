@@ -23,9 +23,14 @@ app.get('/words', (req, res) => {
      res.render('poems', { 
      title: "Неологизмы",
      poems : [
+     {lines : ["рукировка"]},
+     {lines : ["нувостройка"]},
+     {lines : ["левгей"]},
+     {lines : ["изморкофе"]},
      {lines : ["дистрибукт"]},
-     {lines : ["саградостроительство"]} 
-     ]});
+     {lines : ["саградостроительство"]},    
+     {lines : ["цвишенцугцванг"]},    
+    ]});
 });
 
 app.get('/doubles', (req, res) => {
@@ -483,6 +488,15 @@ app.get('/redblack', (req, res) => {
      ]});
 });
 
+app.get('/haiku_minus_plus', (req, res) => {
+     res.render('poems', { 
+     title: "Хокку минус плюс",
+     poems : [
+     {lines : ["Читаю себя.", "Кое-что понимаю.", "МНОГОЕ НРАВИТСЯ"]}, 
+
+     ]});
+});
+
 app.get('/merch', (req, res) => {
      res.render('poems', { 
      title: "Футболки",
@@ -526,7 +540,7 @@ app.get('/26', (req, res) => {
      {lines : ["кисти", "живописте"]},
      {lines : ["хинкали", "икали"]},
      {lines : ["поток", "зазнания", "<br>", "потуг", "сознания"]},   
-     {lines : ["для графа", "де ла Фер"]},
+     {lines : ["для графа", "де ла Фер"]}, 
      {lines : ["после", "Освенцима"]},
      {lines : ["пуд соли", "по вкусу"]},
      {lines : ["не нашлось", "местечка"]},
@@ -638,6 +652,8 @@ app.get('/26', (req, res) => {
 });
 
 
+
+
 app.get('/1-1', (req, res) => {
      res.render('poems', { 
      title: "В две строки",
@@ -649,6 +665,17 @@ app.get('/1-1', (req, res) => {
      {lines : ["мне очень нравится когда", "везде туман везде вода"]},
      {lines : ["Не мысля гордый свет забавить,", "как я с Онегиным моим."]},
      {lines : ["Я был знаком с берлинским палачом,,", "Мне нечего сказать: он был чекистом."]}
+     ]
+     });
+});
+
+app.get('/riddles', (req, res) => {
+     res.render('poems', { 
+     title: "Загадаки",
+     poems : [
+     {lines : ["исчезнут", "грёзы", "печали", "сны", "<br>", "останутся простые числа", "<br>"], epigraph: "Карен Джангиров",
+     reverse: "[ Решето Эратосфена ]"},
+     {lines : ["Я слышал крики и не оглянулся", "<br>"], epigraph: "Герман Лукомников", reverse: "[ The Voice ]"}
      ]
      });
 });
@@ -688,15 +715,19 @@ app.get('/', (req, res) => {
              //{name : "2", title : "Два слова"},
              //{name : "ostrich", title : "Страуса"},
              //{name : "1-1", title : "В две строки"},
+             {name : "haiku_minus_plus", title : "Хокку-+"},
              {name : "side", title : "Взгляд сбоку"},
              {name : "575", title : "Строгие хокку"},
              {name : "haiku", title : "Свободные хокку"},
              //{name : "8", title : "Восьмое чудо света"},
              //{name : "numbers", title : "Цифры"},
              {name : "gariks", title : "Гарики"},
+             {name : "riddles", title : "Загадки"},
+             
              //{name : "transform", title : "Устройства по превращению"},
              //{name : "parentheses", title : "Скобки"},
              //{name : "doubles", title : "Двойники"},
+             
              {name : "words", title : "Неологизмы"},
              {name : "noumenon ", title : "Вещь в себе"}
          ]          
