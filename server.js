@@ -6,11 +6,15 @@ app.engine('handlebars', expbs( { defaultLayout : 'main'}));
 app.set('view engine', 'handlebars');
 
 
+app.get('/image.jpg', (req, res) => {
+  res.sendFile(__dirname + '/image.jpg');
+})
+
 app.get('/noumenon', (req, res) => {
      res.render('poems', { 
      title: "Вещь в себе",
      poems : [
-     {lines : ["пенальти в тишине"], epigraph: "чужое"},         
+     {lines : ["пенальти в тишине"], epigraph: "чужая танкетка"},         
      {lines : ["индийка в Индигирке"]},
      {lines : ["Гарвард в Кембридже"]},
      {lines : ["кенгуру в Шенбрунне"]},
@@ -71,14 +75,6 @@ app.get('/gariks', (req, res) => {
 });
 
 
-app.get('/8', (req, res) => {
-     res.render('poems', { 
-     title: "Восьмое чудо света",
-     poems : [
-     {lines : ["восьмое чудо света", "девятая планета"]}
-     ]});
-});
-
 app.get('/side', (req, res) => {
      res.render('poems', { 
      title: "Взгляд сбоку",
@@ -137,18 +133,6 @@ app.get('/2', (req, res) => {
      poems : [    
      {lines : ["блажество / беспокойство"]},
      {lines : ["рассвет / Переделкино"]}
-     ]});
-});
-
-app.get('/portraits', (req, res) => {
-     res.render('poems', { 
-     title: "Портреты",
-     poems : [
-         
-     {lines : ["[Гандлевский]", "пострел", "постарел"]},        
-     {lines : ["[Леонид Шваб]", "немногословен, сдержан"]},    
-     {lines : ["[Фаина Гримберг]", "ЕВРЕЕВ НЕТ", "(но есть отдельные еврейки)"]},    
-     {lines : ["[Владимир Седов]", "не гуглится но хороший"]}
      ]});
 });
 
@@ -218,6 +202,7 @@ app.get('/plagiarism', (req, res) => {
      res.render('poems', { 
      title: "Плагиат",
      poems : [
+     {lines : ["Алексей", "Верницкий"], epigraph : "танкетка"},
      {lines : ["деньгами", "не пахнет"], epigraph : "танкетка"},
      {lines : ["Осташков", "фисташков"], epigraph : "танкетка"},
      {lines : ["атом", "поэзии"], epigraph : "танкетка"},
@@ -322,6 +307,7 @@ app.get('/zh-p', (req, res) => {
      res.render('poems', { 
      title: "Журнал Прыщ",
      poems : [
+     {lines : ["отдай лишнюю рубашку", "<br>", "отбери лишнюю рубашку", "<br>", "вот и вся разница", "между христианством и социализмом"]},    
      {lines : ["хронос", "космос", "раса", "вирус", "эрос", "<br>", "набросал вариантов", "как Ровшан Аскеров"]},    
      {lines : ["но нет не только рулевого ", "но и руля как такового"]},    
      {lines : ["почему некрасивых не любят?", "это может красивых не любят,", "то есть любят, но как же проверить,", "что не только за то, что красивы? ", "а когда некрасивых полюбят,", "тут уж ясно, что точно за дело,",  "а красивые лишь красотою", "и спасаются"]},
@@ -349,6 +335,16 @@ app.get('/zh-p', (req, res) => {
      ]});
 });
 
+app.get('/love_lyrics', (req, res) => {
+     res.redirect('https://vk.com/cool_cacao')
+});
+
+
+app.get('/forks', (req, res) => {
+     res.redirect('https://www.pinterest.ru/sergeishteiner/')
+});
+
+
 app.get('/chess', (req, res) => {
      res.redirect('https://www.chess.com/blog/ru-poetry')
 });
@@ -368,6 +364,8 @@ app.get('/instapoetry', (req, res) => {
 app.get('/hello_world_poetry', (req, res) => {
      res.redirect('https://t.me/hello_world_poetry')
 });
+
+
 
 app.get('/mono', (req, res) => {
      res.render('poems', { 
@@ -399,7 +397,7 @@ app.get('/mono', (req, res) => {
      ]});
 });
 
-app.get('/forks', (req, res) => {
+app.get('/forks1', (req, res) => {
      res.render('poems', { 
      title: "Форки",
      poems : [
@@ -457,7 +455,9 @@ app.get('/redblack', (req, res) => {
      res.render('poems', { 
      title: "Редблеки",
      poems : [
-     {lines : ["красное", "<font color='red'>чёрное</font>"]}
+     {lines : ["красное", "<font color='red'>чёрное</font>"]},
+     {lines : ["<font color='red'>в</font>ампир/кров<font color='red'>ь</front>"]},
+         
      ]});
 });
 
@@ -490,15 +490,19 @@ app.get('/merch', (req, res) => {
 
 app.get('/42', (req, res) => {
      res.render('poems', { 
-     title: "Сорокадвушки",
+     title: "Танкетки 42",
+         
      poems : [
-     {lines : ["нераспятая", "графа"]},
+     {lines : ["распятая", "графа"]},
      {lines : ["милицанер", "Рейган"]},
      {lines : ["а ещё есть", "шум волн"], epigraph : "[Айвенго]"},
      {lines : ["коллекция", "денег"]},
      {lines : ["срочно сниму", "двушку"]},
      {lines : ["там хорошо", "где нас"], epigraph : "[swap]"},
-     {lines : ["в две строки", "пауза"], epigraph : "[swap]"},
+     {lines : ["вода вилы", "пишу"], epigraph : "[swap]"},
+     {lines : ["гиперссылка", "сибирь"], epigraph : "[swap]"},
+     {lines : ["по кольцевой", "к цели"], epigraph : "[swap]"},
+     {lines : ["принял на грудь", "медаль"], epigraph : "[swap]"},
      {lines : ["боденская", "осень"], epigraph : "[из Михаила Безродного]"}
      ]});
 });
@@ -702,10 +706,17 @@ app.get('/riddles', (req, res) => {
      res.render('poems', { 
      title: "Загадаки",
      poems : [
-     {lines : ["исчезнут", "грёзы", "печали", "сны", "<br>", "останутся простые числа", "<br>"], epigraph: "Карен Джангиров",
+         {lines : ["исчезнут", "грёзы", "печали", "сны", "<br>", "останутся простые числа", "<br>"], epigraph: "Карен Джангиров",
      reverse: "[ Решето Эратосфена ]"},
-     {lines : ["Я слышал крики и не оглянулся", "<br>"], epigraph: "Герман Лукомников", reverse: "[ The Voice ]"}
-     ]
+     {lines : ["Я слышал крики и не оглянулся", "<br>"], epigraph: "Герман Лукомников", reverse: "[ The Voice ]"},
+                {lines : ["Пред испанкой благородной", "Двое рыцарей стоят.", "Оба смело и свободно", "В очи прямо ей глядят.", 
+               "Блещут оба красотою,", "Оба сердцем горячи,", "Оба мощною рукою", "Оперлися на мечи.", "Жизни им она дороже",
+              "И, как слава, им мила;", "Но один ей мил — кого же", "Дева сердцем избрала?", 
+               "«Кто, реши, любим тобою?»-", "Оба деве говорят", "И с надеждой молодою", "В очи прямо ей глядят."], epigraph: "А. С. Пушкин",
+     reverse: "[ Каспаров-Крамник ]"},
+     
+     
+                ]
      });
 });
 
@@ -729,7 +740,7 @@ app.get('/', (req, res) => {
              //{name : "merch", title : "Мерчи"},
              //{name : "stereo", title : "Стереостихи"},
              //{name : "porozhki", title : "Порожки"},
-             //{name : "forks", title : "Форки"},
+             {name : "forks", title : "Форки"},
              {name : "auto_26", title : "Автотанкетки"},
              //{name : "squeeze", title : "Выжимки"},
              //{name : "piramids", title : "Пирамидки"},
@@ -754,11 +765,11 @@ app.get('/', (req, res) => {
              {name : "575", title : "Строгие хокку"},
              {name : "haiku", title : "Свободные хокку"},
              {name : "train", title : "Поезда"},
-             //{name : "numbers", title : "Цифры"},
+             {name : "42", title : "Танкетки 42"},
              {name : "gariks", title : "Гарики"},
              {name : "riddles", title : "Загадки"},
              
-             //{name : "transform", title : "Устройства по превращению"},
+             {name : "love_lyrics", title : "Посредственное кофе"},
              //{name : "parentheses", title : "Скобки"},
              //{name : "doubles", title : "Двойники"},
              
