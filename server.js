@@ -10,7 +10,7 @@ app.get('/image.jpg', (req, res) => {
   res.sendFile(__dirname + '/image.jpg');
 })
 
-app.get('/noumenon', (req, res) => {
+app.get('/noumenon_', (req, res) => {
      res.render('poems', { 
      title: "Вещь в себе",
      preface: "Самопальная медитативная форма. <br> Одно в другом, два в одном.",
@@ -23,7 +23,6 @@ app.get('/noumenon', (req, res) => {
      {lines : ["саверма в Самаре"]}
      ]});
 });
-
 app.get('/words', (req, res) => {
      res.render('poems', { 
      title: "Неологизмы",
@@ -38,16 +37,6 @@ app.get('/words', (req, res) => {
      {lines : ["цвишенцугцванг"]},    
     ]});
 });
-
-app.get('/doubles', (req, res) => {
-     res.render('poems', { 
-     title: "Двойники",
-     poems : [
-     {lines : ["чистка зуб", "чистка зуб"]},
-     {lines : ["дистрофика", "дистрофика"]}
-     ]});
-});
-
 
 app.get('/gariks', (req, res) => {
      res.render('poems', { 
@@ -87,19 +76,7 @@ app.get('/575', (req, res) => {
      ]});
 });
 
-app.get('/ostrich', (req, res) => {
-     res.render('poems', { 
-     title: "Страусы",
-     poems : [
-
-     {lines : ["я про страуса про нанду", "написал бы вам баланду"]},         
-     {lines : ["я про страуса про моа", "написал бы два-три слова"]},         
-     {lines : ["я про страуса про киви", "написал б стеллаж в архиве"]},         
-     {lines : ["я про страуса эму", "написал поэму"]},         
-     ]});
-});
-
-app.get('/landscapes', (req, res) => {
+app.get('/landscapes1', (req, res) => {
      res.render('poems', { 
      title: "Пейзажная лирика",
      preface: "Иной раз названия пейзажей настолько удачны сами по себе, что собственно картина уже и не нужна; во всяком случае, название может существовать совершенно отдельно, а ваше воображение дорисует всё остальное.",
@@ -112,33 +89,18 @@ app.get('/landscapes', (req, res) => {
      ]});
 });
 
-app.get('/2', (req, res) => {
+app.get('/2_', (req, res) => {
      res.render('poems', { 
      title: "В два слова",
      preface: "Часто стихотворение крутится вокруг двух слов. Я решил оставить только их, оригиналы ищите сами)",
      poems : [    
+     {lines : ["нет / никогда"]},
      {lines : ["лебедь / блядь"]},
      {lines : ["поэт / бильярд"]},
      {lines : ["блажество / беспокойство"]},
      {lines : ["рассвет / Переделкино"]}
      ]});
 });
-
-app.get('/samara', (req, res) => {
-     res.render('poems', { 
-     title: "Самара",
-     poems : [
-     {lines : ["кто в Самаре не бывал,", "тот грязи не видал", "горькая правда"]},
-     {lines : ["Самара со всех сторон", "особенно под ногами"]},
-     {lines : ["и даже в сквере имени Урицкого", "никто не знает имени Урицкого"]},
-     {lines : ["даже Москва сдалась Наполеону", "а Самара никому не сдалась"]},
-     {lines : ["снег уберут здесь к Мундиалю"]},
-     {lines : ["Самара — культурная столица", "Самарской области."]},
-     {lines : ["из оставшихся в Самаре", "можно составить город"]},
-     {lines : ["Над Самарой небо синее,", "меж берёз дожди косые.", "Что ж, похоже на Канаду,", "только всё-таки на Россию больше похоже."]}
-     ]});
-});
-
 
 app.get('/35', (req, res) => {
      res.render('poems', { 
@@ -164,31 +126,22 @@ app.get('/mindlessness', (req, res) => {
 
 app.get('/train', (req, res) => {
      res.render('poems', { 
+     preface: "Два населённых пункта и эстетическое напряжение, которое они создают.",
      title: "Поезда",
      poems : [
 
      {lines : ["Зурбаган", "Лис"]},         
      {lines : ["Харьков", "Лисичанск"]},
      {lines : ["Магадан", "Юрмала"]},
-     {lines : ["Кишинёв", "Сент-Луис"]}         
-     ]});
-});
-
-app.get('/trip', (req, res) => {
-     res.render('poems', { 
-     title: "Поездки",
-     poems : [
-         
-     {lines : ["ехать в Воронеж со своей тетрадью"]},
-     {lines : ["ехать в Москву со своей нерезиной"]},
-     {lines : ["ехать в Самару со своим бункером Сталина"]}
-         
+     {lines : ["Кишинёв", "Сент-Луис"]},         
+     {lines : ["А", "Б"]}    
      ]});
 });
 
 app.get('/plagiarism', (req, res) => {
      
      res.render('poems', { 
+     preface: "Мои стихи, кем-то уже написанные.",
      title: "Плагиат",
      poems : [
      {lines : ["винодел", "недолив"], epigraph : "танкетка"},
@@ -290,12 +243,13 @@ app.get('/zh-p', (req, res) => {
      preface: "Публикации <a href=\"https:\\\\vk.com/prish_magazine\">вконтакте</a>. Там, кажется, публикуют всех подряд, даже меня :)",
      title: "Журнал Прыщ",
      poems : [
+     {lines : ["где родился", "тем и возгордился", "<br>", "оттуда и понаехал"]},    
      {lines : ["OX", "&nbsp;&nbsp;&nbsp;&nbsp;OX", "&nbsp;&nbsp;&nbsp;&nbsp;XO"]},    
      {lines : ["отдай лишнюю рубашку", "<br>", "отбери лишнюю рубашку", "<br>", "вот и вся разница", "между христианством и социализмом"]},    
      {lines : ["хронос", "космос", "раса", "вирус", "эрос", "<br>", "набросал вариантов", "как Ровшан Аскеров"]},    
      {lines : ["но нет не только рулевого ", "но и руля как такового"]},    
      {lines : ["почему некрасивых не любят?", "это может красивых не любят,", "то есть любят, но как же проверить,", "что не только за то, что красивы? ", "а когда некрасивых полюбят,", "тут уж ясно, что точно за дело,",  "а красивые лишь красотою", "и спасаются"]},
-     {lines : ["дистрофика", "дистрофика"]},
+     {lines : ["дистрофика", "<br>", "дистрофика"]},
      {lines : ["только голову намылил", "глядь звонок звенит", "- алло, это телевиденье, да?"]},
      {lines : ["Я хочу получить сотню лайков", "ох вы, лайки мои, балалайки,", "ну, не сто, не полсотни,", "я согласен на десять, пятнадцать,", "на пять лайков."]},
      {lines : ["я конечно хороший поэт", "это я сознаю без иллюзий", "да что сделать —  какой уже есть", "правда мог бы я быть и похуже", "правда если б похуже я был", "написал бы я точно не меньше",  "и пришлось бы всё это читать", "так что лучше скажите спасибо"]},
@@ -319,6 +273,11 @@ app.get('/zh-p', (req, res) => {
      ]});
 });
 
+
+app.get('/samara', (req, res) => {
+     res.redirect('https://zen.yandex.ru/id/5eb317ff539faf1b27a44081')
+});
+
 app.get('/love_lyrics', (req, res) => {
      res.redirect('https://vk.com/cool_cacao')
 });
@@ -326,6 +285,11 @@ app.get('/love_lyrics', (req, res) => {
 
 app.get('/forks', (req, res) => {
      res.redirect('https://www.pinterest.ru/poetry_forks/')
+});
+
+
+app.get('/landscapes', (req, res) => {
+     res.redirect('https://www.flickr.com/photos/landscape-lyrics')
 });
 
 
@@ -348,6 +312,27 @@ app.get('/instapoetry', (req, res) => {
 app.get('/hello_world_poetry', (req, res) => {
      res.redirect('https://t.me/hello_world_poetry')
 });
+
+app.get('/bites', (req, res) => {
+     res.redirect('https://deviantart.com/rusbites')
+});
+
+
+app.get('/polpotolok', (req, res) => {
+     res.redirect('https://polpotolok.tumblr.com')
+});
+
+
+
+app.get('/2', (req, res) => {
+     res.redirect('https://twolrds.artstation.com/projects/1nKG4L')
+});
+
+
+app.get('/noumenon', (req, res) => {
+     res.redirect('https://www.pixiv.net/en/artworks/81705617')
+});
+
 
 
 app.get('/forks1', (req, res) => {
@@ -416,6 +401,7 @@ app.get('/redblack', (req, res) => {
 
 app.get('/haiku_minus_plus', (req, res) => {
      res.render('poems', { 
+     preface: "Скомбинированные хокку минус Бориса Гринберга и хокку плюс Германа Лукомникова (идея Владимира Белоброва и Олега Попова). К двум строчкам существующего хокку- я дописываю третью строку в эстетике хокку+, производя обыкновенное хокку.",
      title: "Хокку минус плюс",
      poems : [
      {lines : ["Татьяна Бонч-Осмоловская", "Борис Гринберг", "И Я"]},  
@@ -481,7 +467,7 @@ app.get('/26', (req, res) => {
      
      {lines : ["суси", "из лосуси"], epigraph : "увидено"},
      
-     {lines : ["завтра", "послезавтра", "<br>", "обед", "раз в сотню лет", "<br>", "ужин", "вам не нужен"]},
+     {lines : ["завтрак", "послезавтра", "<br>", "обед", "раз в сотню лет", "<br>", "ужин", "вам не нужен"]},
          
      {lines : ["возделать", "из говна", "<br>", "конфетку", "из говна"]},
      {lines : ["сегодня", "акция", "<br>", "восемь", "ханукалей", "<br>", "по цене", "одного"]}, 
@@ -491,7 +477,7 @@ app.get('/26', (req, res) => {
      {lines : ["ария", "на струне", "<br>", "соль каждой", "музыки"]},
      {lines : ["танкам", "гусеницы", "<br>", "танкеткам", "бабочки"]},
      {lines : ["псевдоним", "как игра"]},
-     {lines : ["Сверлов", "наст фам Ёбург"]},
+     {lines : ["Свердлов", "наст фам Ёбург"]},
      {lines : ["Москва", "музей ночей"]},
      {lines : ["пейзаж", "массаж для глаз"]},
      {lines : ["мы против", "запрета", "<br>", "отрицать", "холокост"]},
@@ -572,7 +558,7 @@ app.get('/26', (req, res) => {
      {lines : ["запах", "мандаринов"]},
      {lines : ["упростил", "Вас до вас"]},
      {lines : ["хателос", "танцавать"]},
-     {lines : ["русская", "бумажка", "<br>", "народный промысел", "<br>", "синим", "по белому", "<br>", "цветочки", "подписей"]},
+     {lines : ["русская", "бумажка", "<br>", "народный", "промысел", "<br>", "синим", "по белому", "<br>", "цветочки", "подписей"]},
      {lines : ["мои", "наушники", "<br>", "сексоты", "стукачи"]},
      {lines : ["носорог", "так видит"]},    
      {lines : ["<font color='red'>ноябрь", "2019 </font>"]},
@@ -596,7 +582,7 @@ app.get('/26', (req, res) => {
      {lines : ["кот Мурр", "Шрёдингера"]},
      {lines : ["читать", "названия", "<br>", "речных", "пароходов"]},
      {lines : ["<font color='red'>октябрь", "2019 </font>"]},
-     {lines : ["Кукин яичницу"]},
+     {lines : ["Кукин", "яичницу"]},
      {lines : ["сначала", "уберись", "<br>", "потом", "убирайся"], epigraph : "[не из Бродского]"},
      {lines : ["я тот", "кто триста лет", "<br>", "топчет", "чужой газон"]},
      {lines : ["снился", "номер СНИЛСа", "<br>", "чексумма", "совпала"]},
@@ -611,7 +597,7 @@ app.get('/26', (req, res) => {
      {lines : ["один", "два е три пи", "<br>", "четыре", "пять шесть семь", "<br>", "восемь", "десять десять"]},
      {lines : ["ягоды", "варенья", "<br>", "стихи", "поэзии"]},
      {lines : ["женская", "атланта", "<br>", "мужской", "кариатид"]},
-     {lines : ["Ахилл", "                   черепаха"]},
+     {lines : ["Ахилл", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;черепаха"]},
      {lines : ["чистка зуб", "чистка зуб"]},
      {lines : ["купец", "легионер"]},
      {lines : ["пиши", "наискосок"]},
@@ -688,6 +674,7 @@ app.get('/first-last', (req, res) => {
 app.get('/riddles', (req, res) => {
      res.render('poems', { 
      title: "Загадаки",
+     preface: "Мои названия чужих стихов. Даётся в форме перевёрнутой отгадки снизу. Такой жанр.",
      poems : [
          {lines : ["исчезнут", "грёзы", "печали", "сны", "<br>", "останутся простые числа", "<br>"], epigraph: "Карен Джангиров",
      reverse: "[ Решето Эратосфена ]"},
@@ -711,54 +698,40 @@ app.get('/', (req, res) => {
              
              {name : "26", title : "Танкетки"},
              {name : "zh-p", title : "Журнал Прыщ"},
-             {name : "monostichs", title : "Моностихи"},
-             {name : "instapoetry", title : "Инстапоэзия"},
-             {name : "hello_world_poetry", title : "Стихи погромиста"},
-             {name : "forks", title : "Форки"},
-             {name : "cmuxu-o-cmuxax-o-cmuxax", title : "Cmuxu o Cmuxax o Cmuxax"},
-             
-             {name : "chess", title : "Шахматы"},
+             {name : "monostichs", title : "Моностихи", hint: "Мой твиттер с моностихами."},
+             {name : "instapoetry", title : "Инстапоэзия", hint: "Мой инстаграм с медитативной лирикой)"},
+             {name : "hello_world_poetry", title : "Стихи погромиста", hint: "Телеграм канал, дневник программиста."},
+             {name : "forks", title : "Форки", hint: "Бесконечные вариации одного (обычно чужого) стихотворения."},
+             {name : "bites", title : "Байты", hint: "Минимальные кусочки известных стихов."},
              {name : "landscapes", title : "Пейзажная лирика"},
-             //{name : "42", title : "Сорокадвушки"},
-             //{name : "redblack", title : "Редблеки"},
-             //{name : "merch", title : "Мерчи"},
-             //{name : "stereo", title : "Стереостихи"},
-             //{name : "porozhki", title : "Порожки"},
-             {name : "auto_26", title : "Автотанкетки"},
-             //{name : "squeeze", title : "Выжимки"},
-             //{name : "piramids", title : "Пирамидки"},
-             //{name : "equations", title : "Уравнения"},
-             //{name : "rotki", title : "Ротки"},
-             //{name : "repeat", title : "Повторюшки"},
-             //{name : "trip", title : "Поездки"},
-             //{name : "train", title : "Поезда"},
-             //{name : "35", title : "Троепятки"},
              {name : "plagiarism", title : "Плагиат"},
-             //{name : "12", title : "Слова в две строки"},
-             //{name : "mindlessness", title : "Задумки"},
-             //{name : "samara", title : "Самара"},
-             //{name : "portraits", title : "Портреты"},
              {name : "2", title : "Два слова"},
-             //{name : "ostrich", title : "Страуса"},
-             {name : "first-last", title : "Первая и последняя строка"},
-             {name : "poroshki", title : "Порошки"},
-             {name : "artichokes", title : "Артишоки"},
+             {name : "polpotolok", title : "Полпотолок"},
              {name : "haiku_minus_plus", title : "Хокку-+"},
-             {name : "side", title : "Взгляд сбоку"},
-             {name : "575", title : "Строгие хокку"},
-             {name : "haiku", title : "Свободные хокку"},
              {name : "train", title : "Поезда"},
+             {name : "samara", title : "АСМРы  Самары"},
              {name : "42", title : "Танкетки 42"},
-             {name : "gariks", title : "Гарики"},
              {name : "riddles", title : "Загадки"},
              
-             {name : "love_lyrics", title : "Посредственное кофе"},
-             //{name : "parentheses", title : "Скобки"},
-             //{name : "doubles", title : "Двойники"},
-             {name : "bananals", title : "Банальностя"},
+             {name : "bananals", title : "Банальности"},
+             {name : "12", title : "Слова в две строки"},
+             {name : "noumenon", title : "Вещь в себе"}
+             //{name : "redblack", title : "Редблеки"},
+             //{name : "trip", title : "Поездки"},
+             //{name : "rotki", title : "Ротки"},
+             //{name : "squeeze", title : "Выжимки"},
+             //{name : "auto_26", title : "Автотанкетки"},
+             //{name : "poroshki", title : "Порошки"},
+             //{name : "artichokes", title : "Артишоки"},
+             //{name : "side", title : "Взгляд сбоку"},
+             //{name : "575", title : "Строгие хокку"},
+             //{name : "haiku", title : "Свободные хокку"},
+             //{name : "gariks", title : "Гарики"},
+             //{name : "love_lyrics", title : "Посредственное кофе"},
+             //{name : "words", title : "Неологизмы"},
+             //{name : "cmuxu-o-cmuxax-o-cmuxax", title : "Cmuxu o Cmuxax o Cmuxax"},
+             //{name : "chess", title : "Шахматы"},
              
-             {name : "words", title : "Неологизмы"},
-             {name : "noumenon ", title : "Вещь в себе"}
          ]          
      });
 });
