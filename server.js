@@ -149,6 +149,7 @@ app.get('/plagiarism', (req, res) => {
      {lines : ["деньгами", "не пахнет"], epigraph : "танкетка"},
      {lines : ["Осташков", "фисташков"], epigraph : "танкетка"},
      {lines : ["атом", "поэзии"], epigraph : "танкетка"},
+     {lines : ["мыльные", "опера"], epigraph : "танкетка"},
      {lines : ["как хорошо что я другой", "а не какой-нибудь такой"], epigraph : "Герман Лукомников"},
      {lines : ["ври", "в рифму"], epigraph : "Герман Лукомников"},
      {lines : ["А", "К", "Р", "О", "С", "Т", "И", "X"], epigraph : "Александр Кондратов "}
@@ -178,14 +179,27 @@ app.get('/rotki', (req, res) => {
 
 app.get('/bananals', (req, res) => {
      res.render('poems', { 
-     preface: "Название говорит за себя. Тупо, но иногда забавно. Врочем, пенки уже сняты Германом Лукомниковым)",
+     preface: "Название говорит за себя. Тупо, но иногда забавно. Впрочем, пенки уже сняты Германом Лукомниковым)",
      title: "Банальности",
      poems : [
-     {lines : ["<font color='red'>футбол", "гол</font>"], epigraph: "Герман Лукомников"},
+     {lines : ["<font color='red'>футбол", "гол</font>"], epigraph: "Герман Лукомников, эталонное"},
      {lines : ["футбол", "фол"]},
      {lines : ["гит", "коммит"]},
      {lines : ["контест", "тест"]},
-     {lines : ["гугл", "дудл"]}    
+     {lines : ["гугл", "дудл"]},
+     {lines : ["рис,", "соберись!"]},
+     {lines : ["народ", "мрот"]},
+     {lines : ["подруга", "друга"]}
+     ]});
+});
+
+app.get('/polit', (req, res) => {
+     res.render('poems', { 
+     preface: "Во избежание публикуются только хеши стихотворений (SHA-256)",
+     title: "Политическая сатира",
+     poems : [
+     {lines : ["d561739bd88f9ef4547ccde2d82d5941ffa414d54f1edd9b7ba6616771e3b17e"]},
+     {lines : ["3d88467015903a1e9e6087fe4ba6ca370def7baafabb81bdb9f9f7dc4a3930d6"]}
      ]});
 });
 
@@ -238,11 +252,12 @@ app.get('/artichokes', (req, res) => {
 });
 
 
-app.get('/zh-p', (req, res) => {
+app.get('/prysch', (req, res) => {
      res.render('poems', { 
      preface: "Публикации <a href=\"https:\\\\vk.com/prish_magazine\">вконтакте</a>. Там, кажется, публикуют всех подряд, даже меня :)", 
      title: "Газета Прыщ",
      poems : [
+     {lines : ["- вам какой?", "- мне простой", "- не простой, а классический!"]},    
      {lines : ["где родился", "тем и возгордился", "<br>", "оттуда и понаехал"]},    
      {lines : ["OX", "&nbsp;&nbsp;&nbsp;&nbsp;OX", "&nbsp;&nbsp;&nbsp;&nbsp;XO"]},    
      {lines : ["отдай лишнюю рубашку", "<br>", "отбери лишнюю рубашку", "<br>", "вот и вся разница", "между христианством и социализмом"]},    
@@ -333,7 +348,23 @@ app.get('/noumenon', (req, res) => {
      res.redirect('https://www.pixiv.net/en/artworks/81705617')
 });
 
+app.get('/hystichs', (req, res) => {
+     res.redirect('https://medium.com/@hystichs')
+});
 
+app.get('/visitki', (req, res) => {
+     res.redirect('https://www.instagram.com/explore/tags/визуальнаятанкетка/')
+});
+
+
+app.get('/yrteopatsni', (req, res) => {
+     res.redirect('https://www.instagram.com/explore/tags/яизэопатсни/')
+});
+
+
+app.get('/hashpo', (req, res) => {
+     res.redirect('https://hashpo.blogspot.com')
+});
 
 app.get('/forks1', (req, res) => {
      res.render('poems', { 
@@ -715,7 +746,7 @@ app.get('/', (req, res) => {
          pages : [
              
              {name : "26", title : "Танкетки", hint: "Complete works"},
-             {name : "zh-p", title : "Газета Прыщ", hint: "Перепечатка стихов из паблика вк"},
+             {name : "prysch", title : "Газета Прыщ", hint: "Перепечатка стихов из паблика вк"},
              {name : "monostichs", title : "Моностихи", hint: "Мой твиттер с моностихами"},
              {name : "instapoetry", title : "Инстапоэзия", hint: "Мой инстаграм с медитативной лирикой)"},
              {name : "hello_world_poetry", title : "Стихи погромиста", hint: "Телеграм канал, дневник программиста"},
@@ -733,21 +764,28 @@ app.get('/', (req, res) => {
              {name : "bananals", title : "Банальности", hint: "Иногда смишно"},
              {name : "12", title : "Слова в две строки", hint: "Слова, которым тесно на одной строке"},
              {name : "noumenon", title : "Вещь в себе", hint: "Самопальная медитативная форма"},
-             {name : "cmuxu-o-cmuxax-o-cmuxax", title : "Cmuxu o Cmuxax o Cmuxax"}
+             {name : "cmuxu-o-cmuxax-o-cmuxax", title : "Cmuxu o Cmuxax o Cmuxax"},
+             {name : "love_lyrics", title : "Посредственное кофе"},
+             {name : "hystichs", title : "Хюстихи", hint: "Регулярная лирика хюггескандинавского толка, как бы не моя"},
+             {name : "visitki", title : "Визитки", hint: "хештег"},
+             {name : "yrteopatsni", title : "яизэопатснИ", hint: "хештег"},
+             {name : "chess", title : "Шахматы"},
              //{name : "redblack", title : "Редблеки"},
              //{name : "trip", title : "Поездки"},
              //{name : "rotki", title : "Ротки"},
              //{name : "squeeze", title : "Выжимки"},
              //{name : "auto_26", title : "Автотанкетки"},
              //{name : "poroshki", title : "Порошки"},
-             //{name : "artichokes", title : "Артишоки"},
+             {name : "artichokes", title : "Артишоки"},
+             {name : "hashpo", title : "ХэшПо"}
+             
+             
              //{name : "side", title : "Взгляд сбоку"},
              //{name : "575", title : "Строгие хокку"},
              //{name : "haiku", title : "Свободные хокку"},
              //{name : "gariks", title : "Гарики"},
-             //{name : "love_lyrics", title : "Посредственное кофе"},
              //{name : "words", title : "Неологизмы"},
-             //{name : "chess", title : "Шахматы"},
+             
              
          ]          
      });
