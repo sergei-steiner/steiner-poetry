@@ -10,6 +10,31 @@ app.get('/image.jpg', (req, res) => {
   res.sendFile(__dirname + '/image.jpg');
 })
 
+app.get('/magnetic', (req, res) => {
+     res.render('magnetic', { 
+     magnetic_poems : [
+       "magnet1", "magnet2", "magnet3"
+     ]});
+});
+app.get('/magnet1', (req, res) => {
+     res.render('magnets', { 
+     magnets : [
+	   "В", "E", "Ч", "Н", "О", "С", "Т", "Ь"
+	 ]});
+});
+app.get('/magnet2', (req, res) => {
+     res.render('magnets', { 
+     magnets : [
+       "поэзия", "это", "лучшие", "слова", "в", "лучшем", "порядке"
+     ]});
+});
+app.get('/magnet3', (req, res) => {
+     res.render('magnets', { 
+     magnets : [
+       " * ", " * ", " * "
+     ]});
+});
+
 app.get('/jewish', (req, res) => {
      res.render('poems', { 
      title: "ייִדיש",
@@ -955,6 +980,7 @@ app.get('/', (req, res) => {
      res.render('index', { 
          title: "Разностишия",
          pages : [
+             {name : "magnetic", title : "Магнитики"},
              {name : "3pythonoff", title : "Палиндромы"},
              {name : "squeezhimki", title : "Выжимки"},
              {name : "haiku_minus_plus", title : "Хокку-+", hint: "В итоге обычные хокку"},
