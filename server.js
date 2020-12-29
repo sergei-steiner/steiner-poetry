@@ -13,7 +13,7 @@ app.get('/image.jpg', (req, res) => {
 app.get('/magnetic', (req, res) => {
      res.render('magnetic', { 
      magnetic_poems : [
-       "magnet1", "magnet2", "magnet3"
+       "magnet4", "magnet3", "magnet2", "magnet1"
      ]});
 });
 app.get('/magnet1', (req, res) => {
@@ -32,6 +32,12 @@ app.get('/magnet3', (req, res) => {
      res.render('magnets', { 
      magnets : [
        " * ", " * ", " * "
+     ]});
+});
+app.get('/magnet4', (req, res) => {
+     res.render('magnets', { 
+     magnets : [
+       "пушкин", "это", "наше", "всё"
      ]});
 });
 
@@ -184,6 +190,7 @@ app.get('/plagiarism', (req, res) => {
      preface: "Мои стихи, кем-то уже написанные.",
      title: "Плагиат",
      poems : [
+     {lines : ["небосвод", "свободен"], epigraph : "танкетка"},
      {lines : ["винодел", "недолив"], epigraph : "танкетка"},
      {lines : ["Алексей", "Верницкий"], epigraph : "танкетка"},
      {lines : ["деньгами", "не пахнет"], epigraph : "танкетка"},
@@ -192,6 +199,7 @@ app.get('/plagiarism', (req, res) => {
      {lines : ["мыльные", "опера"], epigraph : "танкетка"},
      {lines : ["как хорошо что я другой", "а не какой-нибудь такой"], epigraph : "Герман Лукомников"},
      {lines : ["ври", "в рифму"], epigraph : "Герман Лукомников"},
+	 {lines : ["Чу! -", "<br>", "Я", "Молчу"], epigraph : "Герман Лукомников"},
      {lines : ["А", "К", "Р", "О", "С", "Т", "И", "X"], epigraph : "Александр Кондратов "}
      ]});
 });
@@ -1026,18 +1034,23 @@ app.get('/', (req, res) => {
      res.render('index', { 
          title: "Разностишия",
          pages : [
-             {name : "26", title : "Танкетки", hint: "Complete works"},
-             {name : "weblirov", title : "Ответы по существу"},
-             {name : "squeezhimki", title : "Выжимки"},
-             {name : "equations", title : "Уравнения"},
-             {name : "3pythonoff", title : "Палиндромы"},
-             {name : "monostichs", title : "Моностихи", hint: "Мой твиттер с моностихами"},
-             {name : "love_lyrics", title : "Посредственное кофе"},
-             {name : "hello_world_poetry", title : "Стихи погромиста", hint: "Телеграм канал, дневник программиста"},
-             {name : "stereostichs", title : "Стереостихи"},
-             {name : "samara", title : "АСМРы  Самары", hint: "Просто стихи о Самаре"},
+             {name : "3pythonoff", title : "Комбинаторная поэзия", hint: "Комбинаторная поэзия, сочинённая сами знаете как"},
+             {name : "bites", title : "Байты", hint: "Минимальные кусочки известных стихов"},
+             {name : "magnetic", title : "Магнитики", hint: "Каждый может собрать слова в уникальную композицию"},
+             {name : "chess", title : "Шахматы", hint: "Шахматный минимализм-миниатюризм"},
              {name : "polpotolok", title : "Полпотолок", hint: "Первая и последняя строка известных стихотворений"},
-             {name : "magnetic", title : "Магнитики"},
+             {name : "monostichs", title : "Моностихи", hint: "Мой твиттер с моностихами"},
+             {name : "forks", title : "Форки", hint: "Бесконечные вариации одного (обычно чужого) стихотворения"},
+             {name : "plagiarism", title : "Плагиат", hint: "Стихи, которые написал не только я"},
+             {name : "weblirov", title : "Ответы по существу", hint: "Мой аккаунт на Yandex.Кью, отвечаю стихами, пока не забанят"},
+             {name : "squeezhimki", title : "Выжимки", hint: "Фрагменты стихов русских минималистов"},
+             {name : "stereostichs", title : "Стереостихи", hint: "Подрифмовываю чужие моностихи на английском своими на русском"},
+             {name : "landscapes", title : "Пейзажная лирика", hint: "Названия картин в отстутствии картин"},
+             {name : "26", title : "Танкетки", hint: "Complete works"},
+             {name : "equations", title : "Уравнения", hint: "Математические ребусы: каждой букве соответствует уникальная цифра, и наоборот. Решение должно быть единственным!"},
+             {name : "love_lyrics", title : "Посредственное кофе", hint: "Любовная лирика, восьмистишия"},
+             {name : "hello_world_poetry", title : "Стихи погромиста", hint: "Телеграм канал, дневник программиста"},
+             {name : "samara", title : "АСМРы  Самары", hint: "Просто стихи о Самаре"},
              {name : "haiku_minus_plus", title : "Хокку-+", hint: "В итоге обычные хокку"},
              {name : "instapoetry", title : "Инстапоэзия", hint: "Мой инстаграм с медитативной лирикой)"},
              {name : "riddles", title : "Загадки", hint: "Мои названия чужих стихов"},
@@ -1045,11 +1058,6 @@ app.get('/', (req, res) => {
              {name : "train", title : "Поезда", hint: "Из пункта А в пункт Б"},
              {name : "momordicae", title : "Момордики"},
              {name : "prysch", title : "Газета Прыщ", hint: "Перепечатка стихов из паблика вк"},
-             {name : "forks", title : "Форки", hint: "Бесконечные вариации одного (обычно чужого) стихотворения"},
-             {name : "bites", title : "Байты", hint: "Минимальные кусочки известных стихов"},
-             {name : "landscapes", title : "Пейзажная лирика", hint: "Названия картин в отстутствии картин"},
-             {name : "plagiarism", title : "Плагиат", hint: "Стихи, которые я написал не первым"},
-
              //{name : "42", title : "Танкетки 42", hint: "Попытка перевернуть танкетку вверх дном"},
              {name : "bananals", title : "Банальности", hint: "Иногда смишно"},
              {name : "12", title : "Слова в две строки", hint: "Слова, которым тесно на одной строке"},
@@ -1058,8 +1066,7 @@ app.get('/', (req, res) => {
              {name : "hystichs", title : "Хюстихи", hint: "Регулярная лирика хюггескандинавского толка, как бы не моя"},
              {name : "visitki", title : "Визитки", hint: "хештег"},
              {name : "yrteopatsni", title : "яизэопатснИ", hint: "хештег"},
-             {name : "chess", title : "Шахматы"},
-             //{name : "redblack", title : "Редблеки"},
+            //{name : "redblack", title : "Редблеки"},
              //{name : "trip", title : "Поездки"},
              //{name : "rotki", title : "Ротки"},
              //{name : "auto_26", title : "Автотанкетки"},
